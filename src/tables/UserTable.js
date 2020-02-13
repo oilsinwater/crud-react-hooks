@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UserTable = () => (
+const UserTable = props => (
   <table>
     <thead>
       <tr>
@@ -10,8 +10,8 @@ const UserTable = () => (
       </tr>
     </thead>
     <tbody>
-      {props.user.length > 0 ? (
-        props.user.map(user => (
+      {props.users.length > 0 ? (
+        props.users.map(user => (
           <tr key={user.id}>
             <td>{user.name}</td>
             <td>{user.username}</td>

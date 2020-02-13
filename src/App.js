@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import UserTable from './tables/UserTable'
 
 const App = () => {
-  // dummy data 
   const usersData = [
     { id: 1, name: 'Ayoke', username: 'drunkenpasta' },
     { id: 2, name: 'Desmond', username: 'siliconetornado' },
@@ -13,10 +12,10 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>CRUD app with React hooks</h1>
+      <h1>CRUD App with Hooks</h1>
       <div className="flex-row">
         <div className="flex-large">
-          <h2>Add User</h2>
+          <h2>Add user</h2>
         </div>
         <div className="flex-large">
           <h2>View users</h2>
