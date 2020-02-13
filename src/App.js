@@ -42,6 +42,9 @@ const App = () => {
   }
 
   const deleteUser = id => {
+    setEditing(false)
+    // prevents the deletion of a user while its being edited
+
     setUsers(users.filter(user => user.id !== id))
     // filters user out by ID
   }

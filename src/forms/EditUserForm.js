@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const EditUserForm = props => {
 
@@ -9,6 +9,13 @@ const EditUserForm = props => {
 
     setUser({ ...user, [name]: value })
   }
+
+  useEffect(() => {
+    setUser(props.currentUser)
+  }, [props]
+  // using "[props]" array is similar to using componentDidUpdate.
+  // callback function that updates the user state with the new prop that is being sent through
+  )
 
   return (
     <form
