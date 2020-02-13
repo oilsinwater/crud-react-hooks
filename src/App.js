@@ -23,6 +23,7 @@ const App = () => {
     user.id = users.length + 1
     // "...users" code ensures that all the previous users remain in the array.
     setUsers([...users, user])
+    // completes by appending user to the array
   }
 
   const editRow = user => { 
@@ -32,8 +33,16 @@ const App = () => {
   setCurrentUser({ id: user.id, name: user.name, username: user.username })
 }
 
+const updateUser = (id, updateUser) => {
+  setEditing(false)
+
+  setUsers(users.map(user => (user.id === id ? updateUser : user)))
+  // uses ternary operation to map through users and match the id passed through
+}
+
 const deleteUser = id => {
   setUsers(users.filter(user => user.id !== id))
+  // filters user out by ID
 }
 
 return (
