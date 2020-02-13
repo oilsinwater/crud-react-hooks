@@ -1,3 +1,4 @@
+// brings in useState import
 import React, { useState } from 'react'
 import UserTable from './tables/UserTable'
 
@@ -10,7 +11,10 @@ const App = () => {
   ]
 
   const [users, setUsers] = useState(usersData)
+  
+  
 
+// maps the user data sent through and their properties, or display if none
   return (
     <div className="container">
       <h1>CRUD App with Hooks</h1>
