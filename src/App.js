@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import UserTable from './tables/UserTable'
 
 const App = () => {
+  // dummy data
   const usersData = [
     { id: 1, name: 'Ayoke', username: 'drunkenpasta' },
     { id: 2, name: 'Desmond', username: 'siliconetornado' },
