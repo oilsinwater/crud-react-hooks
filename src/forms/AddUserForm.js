@@ -19,7 +19,19 @@ const AddUserForm = props => {
 
   return (
     // extracts values from state object and references function in the onChange event
-    <form>
+    <form
+      onSubmit={event => {
+        event.preventDefault()
+        // prevents default form submission from firing
+        if (!user.name || !user.username) return
+        // validation to make sure empty values cannot be submitted 
+
+        props.addUser(user)s
+        //sends user through the addUser function
+        setUser(initialFormState)
+        // setter to reset form to initial value after successful submission
+      }}
+    >
       <label>Name</label>
       <input type="text" name="name" value={user.name} onChange={handleInputChange} />
       <label>Username</label>
