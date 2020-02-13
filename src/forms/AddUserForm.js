@@ -26,7 +26,7 @@ const AddUserForm = props => {
         if (!user.name || !user.username) return
         // validation to make sure empty values cannot be submitted 
 
-        props.addUser(user)s
+        props.addUser(user)
         //sends user through the addUser function
         setUser(initialFormState)
         // setter to reset form to initial value after successful submission
