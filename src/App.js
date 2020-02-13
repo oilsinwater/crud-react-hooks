@@ -11,10 +11,14 @@ const App = () => {
   ]
 
   const [users, setUsers] = useState(usersData)
-  
-  
 
-// maps the user data sent through and their properties, or display if none
+  const addUser = user => {
+      // function to manually take user object as param, and add them users Array of objects
+    user.id = users.length + 1
+    // "...users" code ensures that all the previous users remain in the array.
+    setUsers([...users, user])
+  }
+
   return (
     <div className="container">
       <h1>CRUD App with Hooks</h1>
