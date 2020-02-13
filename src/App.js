@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import UserTable from './tables/UserTable'
 import AddUserForm from './forms/AddUserForm'
+import EditUserForm from './forms/EditUserForm'
 
 const App = () => {
   // dummy data
@@ -26,46 +27,60 @@ const App = () => {
     // completes by appending user to the array
   }
 
-  const editRow = user => { 
+  const editRow = user => {
     // when "Edit" button is selected on a user, it should return the Edit mode, and set the currentUser
     setEditing(true)
 
-  setCurrentUser({ id: user.id, name: user.name, username: user.username })
-}
+    setCurrentUser({ id: user.id, name: user.name, username: user.username })
+  }
 
-const updateUser = (id, updateUser) => {
-  setEditing(false)
+  const updateUser = (id, updateUser) => {
+    setEditing(false)
 
-  setUsers(users.map(user => (user.id === id ? updateUser : user)))
-  // uses ternary operation to map through users and match the id passed through
-}
+    setUsers(users.map(user => (user.id === id ? updateUser : user)))
+    // uses ternary operation to map through users and match the id passed through
+  }
 
-const deleteUser = id => {
-  setUsers(users.filter(user => user.id !== id))
-  // filters user out by ID
-}
+  const deleteUser = id => {
+    setUsers(users.filter(user => user.id !== id))
+    // filters user out by ID
+  }
 
-return (
-  <div className="container">
-    <h1>CRUD App with Hooks</h1>
-    <div className="flex-row">
-      <div className="flex-large">
-        <h2>Add user</h2>
-        <AddUserForm addUser={addUser} />
-      </div>
-      <div className="flex-large">
-        <h2>View users</h2>
-        <UserTable users={users
-          // passing users variable through props
-        } editRow={editRow
-          // passing editRow function through props
-        } deleteUser={deleteUser
-          // passing deleteUser function through props
-        } />
-      </div>
-    </div>
-  </div>
-)
+  return (
+    <div className="container">
+      <h1>CRUD App with Hooks</h1>
+      <div className="flex-row">
+        <div className="flex-large">
+          {editing ? (
+            <div>
+              <h2>Edit user</h2>
+              <EditUserForm
+                editing={editing}
+                setEditing={setEditing}
+                currentUser={currentUser}
+                updateUser={updateUser}
+              />
+            </div>
+          ) : (
+              <div>
+                <h2>Add user</h2>
+                <AddUserForm addUser={addUser} />
+              </div>
+            )}
+        </div>
+        <div className="flex-large">
+          <h2>View users</h2>
+          <UserTable users={users
+            // passing users variable through props
+          } editRow={editRow
+            // passing editRow function through props
+          } deleteUser={deleteUser
+            // passing deleteUser function through props
+          } />
+        </div>
+      </div >
+    </div >
+  )
 }
 
 export default App
