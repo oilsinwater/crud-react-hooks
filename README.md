@@ -1,4 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# CRUD React App Demo
+
+
+## Get started 
+
+git clone https://github.com/oilsinwater/crud-react-hooks.git
+
+npm i
+
 
 ## Available Scripts
 
