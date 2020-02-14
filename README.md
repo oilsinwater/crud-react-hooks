@@ -4,9 +4,9 @@
 
 ## Get started 
 
-git clone https://github.com/oilsinwater/crud-react-hooks.git
+### `git clone https://github.com/oilsinwater/crud-react-hooks.git`
 
-npm i
+### `npm i`
 
 
 ## Available Scripts
